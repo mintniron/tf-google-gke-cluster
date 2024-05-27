@@ -50,3 +50,9 @@ resource "local_file" "kubeconfig" {
   file_permission = "0400"
 }
 
+terraform {
+  backend "gcs" {
+    bucket = "vit-secret"
+    prefix = "terraform/state"
+  }
+}
